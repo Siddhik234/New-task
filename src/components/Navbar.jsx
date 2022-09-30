@@ -18,6 +18,7 @@ const Navbar = () => {
 
     return (
         <React.Fragment>
+            <h1 id='hh'> Country Details </h1>
         <div class="sidebar">
             <h2 className="nav"> Logo</h2>
             <div>
@@ -26,12 +27,12 @@ const Navbar = () => {
                     <input
                         name="country"
                         type="Radio"
-                        onClick={() => setVisible(!visible) }
+                        onClick={() => setVisible(true) && setVisi(false) && setVisible(!visible) }
                     />
                     <span> India </span>
                 </label>
                 <label className="lab">
-                    <input name="country" type="Radio" onClick={()=>setVisi(!visi)} /> <span> China </span>
+                    <input name="country" type="Radio" onClick={()=>setVisi(true) && setVisible(false)} /> <span> China </span>
                 </label>
             </div>
             {
@@ -177,15 +178,17 @@ const Navbar = () => {
             </div>
               }
         </div>
-        { visible && 
-        <div id="stat" class="content">  <Indianstates/> </div> }
-        {
-            visi && 
-            <div class="content"> <Chinastate/> </div>
+        { 
+         visi &&
+       <div class="content"> <Chinastate/> </div>
+}    
+        {   visible &&
+         <div id="stat" class="content">  <Indianstates/> </div> 
+            
         }
         { dist &&
         <div id="st" class="content"> <Mahadist/> </div>
-        }
+        } 
   </React.Fragment>
   
     );

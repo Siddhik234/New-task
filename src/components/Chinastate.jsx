@@ -1,6 +1,6 @@
 import { Button, Card, CardContent, Grid } from '@mui/material';
 import React from 'react';
-import data from "./data.json";
+import data from "./china.json";
 
 const Chinastate = () => {
 
